@@ -1,0 +1,79 @@
+Downloading flow code from storage at ''
+
+Created task run 'fetch-ba00c645-0' for task 'fetch'
+
+Executing 'fetch-ba00c645-0' immediately...
+
+Finished in state Completed()
+
+fetch-ba00c645-0
+
+Created task run 'clean-2c6af9f6-0' for task 'clean'
+
+Executing 'clean-2c6af9f6-0' immediately...
+
+   VendorID lpep_pickup_datetime  ... trip_type congestion_surcharge
+0       2.0  2020-11-01 00:08:23  ...       1.0                 2.75
+1       2.0  2020-11-01 00:23:32  ...       1.0                 0.00
+
+[2 rows x 20 columns]
+
+clean-2c6af9f6-0
+
+columns: VendorID                        float64
+lpep_pickup_datetime     datetime64[ns]
+lpep_dropoff_datetime    datetime64[ns]
+store_and_fwd_flag               object
+RatecodeID                      float64
+PULocationID                      int64
+DOLocationID                      int64
+passenger_count                 float64
+trip_distance                   float64
+fare_amount                     float64
+extra                           float64
+mta_tax                         float64
+tip_amount                      float64
+tolls_amount                    float64
+ehail_fee                       float64
+improvement_surcharge           float64
+total_amount                    float64
+payment_type                    float64
+trip_type                       float64
+congestion_surcharge            float64
+dtype: object
+
+clean-2c6af9f6-0
+
+rows: 88605
+
+clean-2c6af9f6-0
+
+Finished in state Completed()
+
+clean-2c6af9f6-0
+
+Created task run 'write_local-09e9d2b8-0' for task 'write_local'
+
+Executing 'write_local-09e9d2b8-0' immediately...
+
+Finished in state Completed()
+
+write_local-09e9d2b8-0
+
+Created task run 'write_gcs-67f8f48e-0' for task 'write_gcs'
+
+Executing 'write_gcs-67f8f48e-0' immediately...
+
+Getting bucket 'dtc_data_lake_warm-ring-375016'.
+
+write_gcs-67f8f48e-0
+
+Uploading from PosixPath('/home/svetlanakononova/prefect-zoomcamp/data/green/green_tripdata_2020-11.parquet') to the bucket 'dtc_data_lake_warm-ring-375016' path '/home/svetlanakononova/prefect-zoomcamp/data/green/green_tripdata_2020-11.parquet'.
+
+write_gcs-67f8f48e-0
+
+Finished in state Completed()
+
+write_gcs-67f8f48e-0
+
+Finished in state Completed('All states completed.')

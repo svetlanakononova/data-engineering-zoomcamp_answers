@@ -1,0 +1,53 @@
+Downloading flow code from storage at ''
+
+Created task run 'fetch-ba00c645-0' for task 'fetch'
+
+Executing 'fetch-ba00c645-0' immediately...
+
+Finished in state Completed()
+
+fetch-ba00c645-0
+
+Created task run 'clean-2c6af9f6-0' for task 'clean'
+
+Executing 'clean-2c6af9f6-0' immediately...
+
+   VendorID lpep_pickup_datetime  ... trip_type congestion_surcharge
+0         2  2019-04-01 00:18:40  ...         1                 2.75
+1         2  2019-04-01 00:18:24  ...         1                 0.00
+
+[2 rows x 20 columns]
+
+clean-2c6af9f6-0
+
+columns: VendorID                          int64
+lpep_pickup_datetime     datetime64[ns]
+lpep_dropoff_datetime    datetime64[ns]
+store_and_fwd_flag               object
+RatecodeID                        int64
+PULocationID                      int64
+DOLocationID                      int64
+passenger_count                   int64
+trip_distance                   float64
+fare_amount                     float64
+extra                           float64
+mta_tax                         float64
+tip_amount                      float64
+tolls_amount                    float64
+ehail_fee                       float64
+improvement_surcharge           float64
+total_amount                    float64
+payment_type                      int64
+trip_type                         int64
+congestion_surcharge            float64
+dtype: object
+
+clean-2c6af9f6-0
+
+rows: 514392
+
+clean-2c6af9f6-0
+
+Finished in state Completed()
+
+clean-2c6af9f6-0

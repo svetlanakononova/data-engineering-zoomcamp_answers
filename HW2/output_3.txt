@@ -1,0 +1,5 @@
+Downloading flow code from storage at '/home/svetlanakononova/prefect-zoomcamp'
+Created subflow run 'turquoise-finch' for flow 'etl-gcs-to-bq'
+Created subflow run 'smiling-porpoise' for flow 'etl-gcs-to-bq'
+Rows processed: 14851920
+Finished in state Completed('All states completed.')

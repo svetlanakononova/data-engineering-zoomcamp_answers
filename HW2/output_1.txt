@@ -1,0 +1,45 @@
+12:04:55.855 | INFO    | prefect.engine - Created flow run 'amiable-harrier' for flow 'etl-web-to-gcs'
+12:04:56.065 | INFO    | Flow run 'amiable-harrier' - Created task run 'fetch-b4598a4a-0' for task 'fetch'
+12:04:56.067 | INFO    | Flow run 'amiable-harrier' - Executing 'fetch-b4598a4a-0' immediately...
+/home/svetlanakononova/prefect-zoomcamp/flows/02_gcp/etl_web_to_gcs.py:13: DtypeWarning: Columns (3) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(dataset_url)
+12:04:57.845 | INFO    | Task run 'fetch-b4598a4a-0' - Finished in state Completed()
+12:04:57.881 | INFO    | Flow run 'amiable-harrier' - Created task run 'clean-b9fd7e03-0' for task 'clean'
+12:04:57.882 | INFO    | Flow run 'amiable-harrier' - Executing 'clean-b9fd7e03-0' immediately...
+12:04:58.155 | INFO    | Task run 'clean-b9fd7e03-0' -    VendorID lpep_pickup_datetime  ... trip_type congestion_surcharge
+0       2.0  2019-12-18 15:52:30  ...       1.0                  0.0
+1       2.0  2020-01-01 00:45:58  ...       2.0                  0.0
+
+[2 rows x 20 columns]
+12:04:58.157 | INFO    | Task run 'clean-b9fd7e03-0' - columns: VendorID                        float64
+lpep_pickup_datetime     datetime64[ns]
+lpep_dropoff_datetime    datetime64[ns]
+store_and_fwd_flag               object
+RatecodeID                      float64
+PULocationID                      int64
+DOLocationID                      int64
+passenger_count                 float64
+trip_distance                   float64
+fare_amount                     float64
+extra                           float64
+mta_tax                         float64
+tip_amount                      float64
+tolls_amount                    float64
+ehail_fee                       float64
+improvement_surcharge           float64
+total_amount                    float64
+payment_type                    float64
+trip_type                       float64
+congestion_surcharge            float64
+dtype: object
+12:04:58.159 | INFO    | Task run 'clean-b9fd7e03-0' - rows: 447770
+12:04:58.192 | INFO    | Task run 'clean-b9fd7e03-0' - Finished in state Completed()
+12:04:58.227 | INFO    | Flow run 'amiable-harrier' - Created task run 'write_local-f322d1be-0' for task 'write_local'
+12:04:58.228 | INFO    | Flow run 'amiable-harrier' - Executing 'write_local-f322d1be-0' immediately...
+12:04:59.705 | INFO    | Task run 'write_local-f322d1be-0' - Finished in state Completed()
+12:04:59.739 | INFO    | Flow run 'amiable-harrier' - Created task run 'write_gcs-1145c921-0' for task 'write_gcs'
+12:04:59.740 | INFO    | Flow run 'amiable-harrier' - Executing 'write_gcs-1145c921-0' immediately...
+12:04:59.882 | INFO    | Task run 'write_gcs-1145c921-0' - Getting bucket 'dtc_data_lake_warm-ring-375016'.
+12:05:00.075 | INFO    | Task run 'write_gcs-1145c921-0' - Uploading from PosixPath('data/green/green_tripdata_2020-01.parquet') to the bucket 'dtc_data_lake_warm-ring-375016' path 'data/green/green_tripdata_2020-01.parquet'.
+12:05:00.358 | INFO    | Task run 'write_gcs-1145c921-0' - Finished in state Completed()
+12:05:00.395 | INFO    | Flow run 'amiable-harrier' - Finished in state Completed('All states completed.')

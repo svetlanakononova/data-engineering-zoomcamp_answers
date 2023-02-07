@@ -1,0 +1,9 @@
+1. python flows/02_gcp/etl_web_to_gcs.py >output_1.txt 2>&1
+2. prefect deployment build flows/02_gcp/etl_web_to_gcs.py:etl_web_to_gcs -n "Homework ETL" --cron "0 5 1 * *"
+   prefect deployment apply etl_web_to_gcs-deployment.yaml
+3. prefect deployment build flows/02_gcp/etl_gcs_to_bq.py:etl_parent_flow  -n "Homework ETL-2" -a
+4. python make_github_block.py
+   prefect deployment build HW2/etl_web_to_gcs.py:etl_web_to_gcs --name github-deploy -sb github/github-deploy  -a
+
+6. ******** 8 
+
