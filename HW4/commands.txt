@@ -1,0 +1,2 @@
+docker-compose run --workdir="//usr/app/dbt/taxi_rides_ny" dbt-bq-dtc run -m stg_fhv_tripdata --var 'is_test_run: false'
+docker-compose run --workdir="//usr/app/dbt/taxi_rides_ny" dbt-bq-dtc run -m fact_fhv_trips
